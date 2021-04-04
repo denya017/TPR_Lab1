@@ -16,7 +16,7 @@ for (let i = 0; i < tableOfAlternatives.length; i++) {
             buf++
         }
     }
-    if (buf == 3){
+    if (buf == numCriterion){
         continue
     }
     let pos = 0, neg = 0;
