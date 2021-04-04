@@ -124,7 +124,6 @@ function tableOjAlternatives() {
         }
     }
 
-    //localStorage.setItem("negAlt", JSON.stringify())
     localStorage.setItem("tableAlt", JSON.stringify(tableOfAlternatives));
     localStorage.setItem("numCriterion", numCriterion.toString());
 
@@ -159,13 +158,8 @@ function tableOjAlternatives() {
     document.getElementById('control').append(btn);
 }
 
-<<<<<<< Updated upstream
 function controlAlt() {
-    document.getElementById('control').innerHTML = `<p class="my-3">Выберите альтернативу</p>`;
-=======
-function classifiedAlternatives() {
-    document.getElementById('classified').innerHTML = `<p class="my-3">Выберите контрольную альтернативу</p>`;
->>>>>>> Stashed changes
+    document.getElementById('control').innerHTML = `<p class="my-3">Выберите контрольную альтернативу</p>`;
     let numberOfCriterion = getNumberOfCriterion();
     let scale = getScales(numberOfCriterion);
     for (let i = 1; i < numberOfCriterion+1; i++) {
@@ -186,15 +180,22 @@ function classifiedAlternatives() {
         divTag.append(inputTag);
         document.getElementById('control').append(divTag);
     }
-<<<<<<< Updated upstream
 
     let btn = document.createElement("button");
+    btn.id = 'classBtn'
     btn.type = "button";
     btn.className = "btn btn-primary my-3";
     btn.onclick = classifyAlt;
     btn.innerHTML = "Классифициорвать альтернативы";
     document.getElementById('classify').append(btn);
 }
-=======
+
+function classifyAlt(){
+    document.getElementById('classBtn').remove();
+    document.getElementById("classLabel").innerHTML = `<a href="classify.html" target="_blank">Открыть таблицу</a>`;
+    let control = []
+    for (let i = 1; i < getNumberOfCriterion()+1; i++){
+        control.push(document.getElementById('selectedK'+i).value)
+    }
+    localStorage.setItem("control", JSON.stringify(control));
 }
->>>>>>> Stashed changes
