@@ -4,8 +4,6 @@ fillingScales();
 document.getElementById('inputNumberOfCriterion').addEventListener("click", fillingScales);
 
 
-//////////////////////////////////////////////
-
 function cls() {
     document.getElementById("totalNumber").innerHTML = "";
     document.getElementById("table").innerHTML = "";
@@ -163,8 +161,7 @@ function tableOjAlternatives() {
 }
 
 function classifiedAlternatives() {
-    document.getElementById('titleSelected').innerHTML = "Введите размер шкалы критериев";
-    document.getElementById('classified').innerHTML = "";
+    document.getElementById('classified').innerHTML = `<p class="my-3">Выберите альтернативу</p>`;
     let numberOfCriterion = getNumberOfCriterion();
     let scale = getScales(numberOfCriterion);
     for (let i = 1; i < numberOfCriterion+1; i++) {
