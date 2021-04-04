@@ -124,6 +124,7 @@ function tableOjAlternatives() {
         }
     }
 
+    //localStorage.setItem("negAlt", JSON.stringify())
     localStorage.setItem("tableAlt", JSON.stringify(tableOfAlternatives));
     localStorage.setItem("numCriterion", numCriterion.toString());
 
@@ -158,8 +159,13 @@ function tableOjAlternatives() {
     document.getElementById('control').append(btn);
 }
 
+<<<<<<< Updated upstream
 function controlAlt() {
     document.getElementById('control').innerHTML = `<p class="my-3">Выберите альтернативу</p>`;
+=======
+function classifiedAlternatives() {
+    document.getElementById('classified').innerHTML = `<p class="my-3">Выберите контрольную альтернативу</p>`;
+>>>>>>> Stashed changes
     let numberOfCriterion = getNumberOfCriterion();
     let scale = getScales(numberOfCriterion);
     for (let i = 1; i < numberOfCriterion+1; i++) {
@@ -180,6 +186,7 @@ function controlAlt() {
         divTag.append(inputTag);
         document.getElementById('control').append(divTag);
     }
+<<<<<<< Updated upstream
 
     let btn = document.createElement("button");
     btn.type = "button";
@@ -188,3 +195,6 @@ function controlAlt() {
     btn.innerHTML = "Классифициорвать альтернативы";
     document.getElementById('classify').append(btn);
 }
+=======
+}
+>>>>>>> Stashed changes
