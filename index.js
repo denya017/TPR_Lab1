@@ -7,7 +7,7 @@ function cls() {
     document.getElementById("table").innerHTML = "";
     document.getElementById("bestAlt").innerHTML = "";
     document.getElementById("badAlt").innerHTML = "";
-    document.getElementById("classified").innerHTML = "";
+    document.getElementById("control").innerHTML = "";
 }
 
 function fillingOptions() {
@@ -149,17 +149,17 @@ function tableOjAlternatives() {
     }
     document.getElementById("badAlt").innerHTML = "Худшая альтернатива: ( " + badAlternative + " )";
 
-    document.getElementById('classified').innerHTML = "";
+    document.getElementById('control').innerHTML = "";
     let btn = document.createElement("button");
     btn.type = "button";
     btn.className = "btn btn-primary my-3";
-    btn.onclick = classifiedAlternatives;
-    btn.innerHTML = "Cls";
-    document.getElementById('classified').append(btn);
+    btn.onclick = controlAlt;
+    btn.innerHTML = "Выбрать контрольную альтернативу";
+    document.getElementById('control').append(btn);
 }
 
-function classifiedAlternatives() {
-    document.getElementById('classified').innerHTML = `<p class="my-3">Выберите альтернативу</p>`;
+function controlAlt() {
+    document.getElementById('control').innerHTML = `<p class="my-3">Выберите альтернативу</p>`;
     let numberOfCriterion = getNumberOfCriterion();
     let scale = getScales(numberOfCriterion);
     for (let i = 1; i < numberOfCriterion+1; i++) {
@@ -178,6 +178,13 @@ function classifiedAlternatives() {
         inputTag.setAttribute('value', '1');
         inputTag.required=true;
         divTag.append(inputTag);
-        document.getElementById('classified').append(divTag);
+        document.getElementById('control').append(divTag);
     }
+
+    let btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-primary my-3";
+    btn.onclick = classifyAlt;
+    btn.innerHTML = "Классифициорвать альтернативы";
+    document.getElementById('classify').append(btn);
 }
