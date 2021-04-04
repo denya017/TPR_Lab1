@@ -1,8 +1,6 @@
-
 fillingOptions();
 fillingScales();
 document.getElementById('inputNumberOfCriterion').addEventListener("click", fillingScales);
-
 
 function cls() {
     document.getElementById("totalNumber").innerHTML = "";
@@ -130,7 +128,7 @@ function tableOjAlternatives() {
     localStorage.setItem("numCriterion", numCriterion.toString());
 
 
-    document.getElementById("table").innerHTML = `<a href="second.html" target="_blank">Открыть таблицу</a>`;
+    document.getElementById("table").innerHTML = `<a href="table.html" target="_blank">Открыть таблицу</a>`;
 
     /////best
     let bestAlternative = "";
