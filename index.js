@@ -8,6 +8,7 @@ function cls() {
     document.getElementById("bestAlt").innerHTML = "";
     document.getElementById("badAlt").innerHTML = "";
     document.getElementById("control").innerHTML = "";
+    document.getElementById("classLabel").innerHTML = "";
 }
 
 function fillingOptions() {
