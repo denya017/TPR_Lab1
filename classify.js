@@ -42,7 +42,8 @@ for (let i = 0; i < tableOfAlternatives.length; i++) {
     let best = '<p class="m-3">Лучших ' + positiveAlternative.length + '</p>';
     let bad = '<p class="m-3">Худших ' + negativeAlternative.length + '</p>';
     let disp = '<p class="m-3">Несранимых ' + disparateAlternative.length + '</p>';
-    document.getElementById('info').innerHTML = best + bad + disp;
+    let sum = '<p class="m-3">Всего ' + (positiveAlternative.length + negativeAlternative.length + disparateAlternative.length + 1) + '</p>'
+    document.getElementById('info').innerHTML = best + bad + disp + sum;
 }
 
 bufArray = positiveAlternative;
